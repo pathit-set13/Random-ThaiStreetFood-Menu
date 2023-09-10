@@ -22,6 +22,7 @@ def meat_random():
 #   list_meat.append(meatAdd)
 
 MainWindow = Tk()
+MainWindow.geometry("500x400")
 label_Manu = Label(MainWindow,text="What should to eat?")
 label_Manu.grid(row=0, column=0)
 label_type = Label(MainWindow,text="")
