@@ -9,7 +9,6 @@ def type_random():
     food_type = random.choice(list_type)
     label_type.configure(text=food_type)
 
-
 def meat_random():
     list_meat = ["หมู", "หมูกรอบ", "หมูสับ", "ไก่", "เนื้อ", "หมึก", "กุ้ง", "ปลาดุก", "ปลาสลิด", "ทะเลรวม"]
     meat_type = random.choice(list_meat)
