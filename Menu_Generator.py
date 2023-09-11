@@ -34,7 +34,8 @@ label_meattext.place(x="15", y="65")
 label_meat = Label(MainWindow,text="", font=("Chakra Petch",13), bg="#ffda95", width="15")
 label_meat.place(x="80", y="65")
 
-Random_Button = Button(MainWindow, text ="Random!", font=("Roboto",10), command =lambda:[type_random(),meat_random()], width="12", bg="#6495ED")
+Random_Button = Button(MainWindow, text ="Random!", font=("Roboto",10), command =lambda:[type_random(),meat_random()]
+                       , width="12", bg="#6495ED")
 Random_Button.place(x="30", y="100")
 Add_Button = Button(MainWindow, text="Add Menu", font=("Roboto",10), width="12", bg="#9a8bf2")
 Add_Button.place(x="130", y="100")
