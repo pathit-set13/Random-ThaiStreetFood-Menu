@@ -5,7 +5,7 @@ from tkinter import *
 
 def type_random():
     list_type = ["ผัดกะเพรา", "ผัดพริกแกง", "คั่วพริกเกลือ", "สุกี้น้ำ", "สุกี้แห้ง", "ข้าวผัด", "ผัดผงกะหรี่",
-                 "ทอดกระเทียม", "ผัดน้ำมันหอย", "ผัดคะน้า"]
+                 "ทอดกระเทียม", "ผัดน้ำมันหอย", "ผัดคะน้า", "ผัดผักบุ้ง"]
     food_type = random.choice(list_type)
     label_type.configure(text=food_type)
 
@@ -37,8 +37,3 @@ Random_Button = Button(MainWindow, text = "Random!", command = lambda:[type_rand
 Random_Button.grid(row = 3, column = 1)
 
 MainWindow.mainloop()
-
-
-
-#type_random()
-#meat_random()
