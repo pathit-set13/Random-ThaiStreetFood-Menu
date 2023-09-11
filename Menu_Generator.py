@@ -22,18 +22,20 @@ def meat_random():
 #   list_meat.append(meatAdd)
 
 MainWindow = Tk()
-MainWindow.geometry("350x125")
-label_message = Label(MainWindow,text="What should to eat?", font=("Roboto",14))
+MainWindow.geometry("250x130")
+
+label_message = Label(MainWindow,text="ตามสั่งอะไรดี?", font=("Chakra Petch",14))
 label_message.grid(row=0, column=1)
-label_typetext = Label(MainWindow,text="Menu Type : ", font=("Roboto",12))
-label_typetext.grid(row=1, column=0)
+label_typetext = Label(MainWindow,text="Type : ", font=("Roboto",12), width="7")
+label_typetext.grid(row=1, column=0, sticky="e")
 label_type = Label(MainWindow,text="", font=("Chakra Petch",12), bg="#ffda95", width="15")
 label_type.grid(row=1, column=1)
-label_meattext = Label(MainWindow,text="Meat : ", font=("Roboto",12))
-label_meattext.grid(row=2, column=0)
+label_meattext = Label(MainWindow,text="Meat : ", font=("Roboto",12), width="7")
+label_meattext.grid(row=2, column=0, sticky="e")
 label_meat = Label(MainWindow,text="", font=("Chakra Petch",12), bg="#ffda95", width="15")
 label_meat.grid(row=2, column=1)
-Random_Button = Button(MainWindow, text = "Random!", command = lambda:[type_random(),meat_random()])
+
+Random_Button = Button(MainWindow, text = "Random!", command = lambda:[type_random(),meat_random()], width="12")
 Random_Button.grid(row = 3, column = 1)
 
 MainWindow.mainloop()
