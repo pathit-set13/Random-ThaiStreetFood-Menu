@@ -1,17 +1,30 @@
 # Final project for Python Programming course by https://www.borntodev.com/
 # This is a food generator that randomizes Thai Street Food.
+
+##-----------------------------------------##
+
 import random
 from tkinter import *
 
+# Read data file.
+list_type = "data_type.txt"
+with open(list_type, "r", encoding='utf-8') as file_type:
+    type_data_lines = file_type.read().splitlines()
+    type_data = set(type_data_lines) # Make as set because don't want the duplicate data
+
+list_meat = "data_meat.txt"
+with open(list_meat, "r", encoding='utf-8') as file_meat:
+    meat_data_lines = file_meat.read().splitlines()
+    meat_data = set(meat_data_lines)
+
+##-----------------------------------------##
+
 def type_random():
-    list_type = ["ผัดกะเพรา", "ผัดพริกแกง", "คั่วพริกเกลือ", "สุกี้น้ำ", "สุกี้แห้ง", "ข้าวผัด", "ผัดผงกะหรี่",
-                 "ทอดกระเทียม", "ผัดน้ำมันหอย", "ผัดคะน้า", "ผัดผักบุ้ง"]
-    food_type = random.choice(list_type)
+    food_type = random.choice(list(type_data))
     type_result.configure(text=food_type)
 
 def meat_random():
-    list_meat = ["หมู", "หมูกรอบ", "หมูสับ", "ไก่", "เนื้อ", "หมึก", "กุ้ง", "ปลาดุก", "ปลาสลิด", "ทะเลรวม"]
-    meat_type = random.choice(list_meat)
+    meat_type = random.choice(list(meat_data))
     meat_result.configure(text=meat_type)
 
 #def add_menu():
@@ -20,7 +33,9 @@ def meat_random():
 #   meatAdd = input("Enter New Meat:")
 #   list_meat.append(meatAdd)
 
-#Main Window GUI
+##-----------------------------------------##
+
+# Main Window GUI
 MainWindow = Tk()
 MainWindow.title("Menu Generator")
 MainWindow.geometry("250x135")
