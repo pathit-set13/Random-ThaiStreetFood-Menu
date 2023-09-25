@@ -33,6 +33,28 @@ def meat_random():
 #   meatAdd = input("Enter New Meat:")
 #   list_meat.append(meatAdd)
 
+# New Window for Add Menu function.
+def window_add():
+    add_menuWindow = Toplevel(MainWindow)
+    add_menuWindow.title("Add New Menu")
+    add_menuWindow.geometry("250x135")
+
+    message_new = Label(add_menuWindow, text="Add New Menu", font=("Chakra Petch",14))
+    message_new.place(x="60", y="0.5")
+    addType_text = Label(add_menuWindow, text="Type : ", font=("Roboto", 12), width="7")
+    addType_text.place(x="15", y="35")
+    type_entry = Entry(add_menuWindow)
+    type_entry.place(x="80", y="35")
+    addMeat_text = Label(add_menuWindow, text="Meat : ", font=("Roboto", 12), width="7")
+    addMeat_text.place(x="15", y="65")
+    meat_entry = Entry(add_menuWindow)
+    meat_entry.place(x="80", y="65")
+
+    addType_button = Button(add_menuWindow, text ="Add Type", font=("Roboto",10), width="10", bg="#6495ED" )
+    addType_button.place(x="35", y="100")
+    addMeat_button = Button(add_menuWindow, text ="Add Meat", font=("Roboto",10), width="10", bg="#9a8bf2")
+    addMeat_button.place(x="135", y="100")
+
 ##-----------------------------------------##
 
 # Main Window GUI
@@ -54,7 +76,7 @@ meat_result.place(x="80", y="65")
 Random_Button = Button(MainWindow, text ="Random!", font=("Roboto",10), command =lambda:[type_random(),meat_random()]
                        , width="12", bg="#6495ED")
 Random_Button.place(x="30", y="100")
-Add_Button = Button(MainWindow, text="Add Menu", font=("Roboto",10), width="12", bg="#9a8bf2")
+Add_Button = Button(MainWindow, text="Add Menu", font=("Roboto",10), command=window_add, width="12", bg="#9a8bf2")
 Add_Button.place(x="130", y="100")
 
 MainWindow.mainloop()
