@@ -27,11 +27,24 @@ def meat_random():
     meat_type = random.choice(list(meat_data))
     meat_result.configure(text=meat_type)
 
-#def add_menu():
-#   typeAdd = input("Enter New Type: ")
-#   list_type.append(typeAdd)
-#   meatAdd = input("Enter New Meat:")
-#   list_meat.append(meatAdd)
+# Entry type&meat to file
+def addType_toFile(type_entry=None):
+    if type_entry is None or type_entry.get()=="":
+        return # Do nothing
+    else:
+        type_input = type_entry.get()
+        with open(list_type, "a", encoding='utf-8') as type_file:
+            type_file.write('\n'+type_input)
+        type_entry.delete(0, END)
+
+def addMeat_toFile(meat_entry=None):
+    if meat_entry is None or meat_entry.get()=="":
+        return
+    else:
+        meat_input = meat_entry.get()
+        with open(list_meat, "a", encoding='utf-8') as meat_file:
+            meat_file.write('\n'+meat_input)
+        meat_entry.delete(0, END)
 
 # New Window for Add Menu function.
 def window_add():
@@ -50,9 +63,9 @@ def window_add():
     meat_entry = Entry(add_menuWindow)
     meat_entry.place(x="80", y="65")
 
-    addType_button = Button(add_menuWindow, text ="Add Type", font=("Roboto",10), width="10", bg="#6495ED" )
+    addType_button = Button(add_menuWindow, text="Add Type", font=("Roboto", 10), command=lambda: addType_toFile(type_entry), width="10", bg="#6495ED")
     addType_button.place(x="35", y="100")
-    addMeat_button = Button(add_menuWindow, text ="Add Meat", font=("Roboto",10), width="10", bg="#9a8bf2")
+    addMeat_button = Button(add_menuWindow, text="Add Meat", font=("Roboto", 10), command=lambda: addMeat_toFile(meat_entry), width="10", bg="#9a8bf2")
     addMeat_button.place(x="135", y="100")
 
 ##-----------------------------------------##
@@ -78,5 +91,7 @@ Random_Button = Button(MainWindow, text ="Random!", font=("Roboto",10), command 
 Random_Button.place(x="30", y="100")
 Add_Button = Button(MainWindow, text="Add Menu", font=("Roboto",10), command=window_add, width="12", bg="#9a8bf2")
 Add_Button.place(x="130", y="100")
+
+##-----------------------------------------##
 
 MainWindow.mainloop()
