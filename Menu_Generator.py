@@ -48,27 +48,28 @@ def addMeat_toFile(meat_entry=None):
 
 # New Window for Add Menu function.
 def window_add():
-    add_menuWindow = Toplevel(MainWindow)
-    add_menuWindow.title("Add New Menu")
-    add_menuWindow.geometry("250x135")
-
-    message_new = Label(add_menuWindow, text="Add New Menu", font=("Chakra Petch",14))
-    message_new.place(x="60", y="0.5")
-    addType_text = Label(add_menuWindow, text="Type : ", font=("Roboto", 12), width="7")
-    addType_text.place(x="15", y="35")
-    type_entry = Entry(add_menuWindow)
+    head_message.config(text="Add New Menu", font=("Chakra Petch",14))
+    head_message.place(x="60", y="0.5")
+    type_result.place_forget()
+    type_entry = Entry(MainWindow)
     type_entry.place(x="80", y="35")
-    addMeat_text = Label(add_menuWindow, text="Meat : ", font=("Roboto", 12), width="7")
-    addMeat_text.place(x="15", y="65")
-    meat_entry = Entry(add_menuWindow)
+    meat_result.place_forget()
+    meat_entry = Entry(MainWindow)
     meat_entry.place(x="80", y="65")
 
     #addType_button = Button(add_menuWindow, text="Add Type", font=("Roboto", 10), command=lambda: addType_toFile(type_entry), width="10", bg="#6495ED")
     #addType_button.place(x="35", y="100")
     #addMeat_button = Button(add_menuWindow, text="Add Meat", font=("Roboto", 10), command=lambda: addMeat_toFile(meat_entry), width="10", bg="#9a8bf2")
     #addMeat_button.place(x="135", y="100")
-    addNew_Button = Button(add_menuWindow, text="Add", font=("Roboto", 10), command=lambda:[addType_toFile(type_entry),addMeat_toFile(meat_entry)], width="10", bg="#8dddce")
-    addNew_Button.place(x="85",y="100")
+    Add_Button.place_forget()
+    Random_Button.place_forget()
+    addNew_Button = Button(MainWindow, text="Add", font=("Roboto", 10), command=lambda:[addType_toFile(type_entry),addMeat_toFile(meat_entry)], width="10", bg="#8dddce")
+    addNew_Button.place(x="100",y="100")
+    back_button = Button(MainWindow, text="Back", font=("Roboto", 10), command=restart_window, width="7", bg="#d8d8d8")
+    back_button.place(x="10", y="100")
+
+def restart_window():
+    MainWindow.destroy()
 
 ##-----------------------------------------##
 
