@@ -65,7 +65,7 @@ def window_add():
     Random_Button.place_forget()
     addNew_Button = Button(MainWindow, text="Add", font=("Roboto", 10), command=lambda:[addType_toFile(type_entry),addMeat_toFile(meat_entry)], width="10", bg="#8dddce")
     addNew_Button.place(x="100",y="100")
-    back_button = Button(MainWindow, text="Back", font=("Roboto", 10), command=restart_window, width="7", bg="#d8d8d8")
+    back_button = Button(MainWindow, text="Close", font=("Roboto", 10), command=restart_window, width="7", bg="#d8d8d8")
     back_button.place(x="10", y="100")
 
 def restart_window():
