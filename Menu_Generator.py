@@ -70,8 +70,8 @@ def window_add(): #New Window for Add Menu function.
 
     Button_1.config(text="Add", font=("Roboto", 10),
                     command=lambda:[addType_toFile(type_entry),addMeat_toFile(meat_entry)], width="12", bg="#8dddce")
-    Button_2.config(text="Close", font=("Roboto", 10), command=lambda:[return_original_gui(type_entry,meat_entry)]
-                    , width="12", bg="#d8d8d8")
+    Button_2.config(text="Back", font=("Roboto", 10), command=lambda:[return_original_gui(type_entry,meat_entry)]
+                    , width="12", bg="#ff8080")
 
 def return_original_gui(type_entry=None, meat_entry=None):
 
