@@ -57,10 +57,6 @@ def window_add():
     meat_entry = Entry(MainWindow)
     meat_entry.place(x="80", y="65")
 
-    #addType_button = Button(add_menuWindow, text="Add Type", font=("Roboto", 10), command=lambda: addType_toFile(type_entry), width="10", bg="#6495ED")
-    #addType_button.place(x="35", y="100")
-    #addMeat_button = Button(add_menuWindow, text="Add Meat", font=("Roboto", 10), command=lambda: addMeat_toFile(meat_entry), width="10", bg="#9a8bf2")
-    #addMeat_button.place(x="135", y="100")
     Add_Button.place_forget()
     Random_Button.place_forget()
     addNew_Button = Button(MainWindow, text="Add", font=("Roboto", 10), command=lambda:[addType_toFile(type_entry),addMeat_toFile(meat_entry)], width="10", bg="#8dddce")
