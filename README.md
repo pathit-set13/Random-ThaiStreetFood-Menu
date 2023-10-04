@@ -1,5 +1,4 @@
 # Project: Thai street food menu generator
-**Status** : *In progress . . . (80%)*
 - Inspired by personal experiences that can't decide what to eat.
 - The mini Project for Python programming course by BorntoDev.com
 
