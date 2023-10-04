@@ -13,5 +13,5 @@ Random feature
 
 Add new menu feature
 
-![App Screenshot](https://drive.google.com/uc?id=1zctRAk_G3187_9DqO1NhhfzNFhQaVqCx)
+![App Screenshot](https://drive.google.com/uc?id=1-4n7O8gSMhn6lpqO2NGhuQXzWcTPZUu5)
 
